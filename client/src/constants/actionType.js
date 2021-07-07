@@ -1,0 +1,10 @@
+export const CREATE = 'CREATE';
+export const EDIT = 'EDIT';
+export const DELETE = 'DELETE';
+export const FETCH_ALL = 'FETCH_ALL';
+export const LIKE = 'LIKE';
+export const CREATE_DISCUSSION = 'CREATE_DISCUSSION';
+export const FETCH_DISCUSSION = 'FETCH_DISCUSSION';
+export const GET_DISCUSSION='GET_DISCUSSION';
+export const DELETE_DISCUSSION='DELETE_DISCUSSION';
+export const EDIT_DISCUSSION='EDIT_DISCUSSION';
