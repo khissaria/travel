@@ -1,10 +1,12 @@
-import { FETCH_DISCUSSION, CREATE_DISCUSSION, GET_DISCUSSION, DELETE_DISCUSSION, EDIT_DISCUSSION } from '../constants/actionType.js';
+import { FETCH_DISCUSSION, CREATE_DISCUSSION, GET_DISCUSSION, DELETE_DISCUSSION, EDIT_DISCUSSION, GET_ALL_DISCUSSION } from '../constants/actionType.js';
 const reducer = (discussion = [], action) => {
     switch (action.type) {
         case FETCH_DISCUSSION:
             return action.payload;
         case CREATE_DISCUSSION:
             return [...discussion, action.payload];
+        case GET_ALL_DISCUSSION:
+            return action.payload;
         case GET_DISCUSSION:
             return action.payload;
         case DELETE_DISCUSSION:

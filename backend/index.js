@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 
 import locationRoutes from './routes/location.js';
 import discussionRoutes from './routes/discussion.js';
+import userRoutes from './routes/user.js';
 
 const app=express();
 
@@ -17,12 +18,13 @@ app.use(cors());
 
 app.use('/location',locationRoutes);
 app.use('/discussion',discussionRoutes);
+app.use('/users',userRoutes);
 
 app.get('/',(req,resp)=>{
     resp.send('Success');
 })
 
-const MONGO_URI=process.env.MONGO_URI||'mongodb+srv://kaushal_hissaria:Accenture@12345@pvtcluster.t0v7x.mongodb.net/travels?retryWrites=true&w=majority';
+const MONGO_URI=process.env.MONGO_URI;
 const PORT = process.env.PORT||5000;
 
 mongoose.connect(MONGO_URI,{

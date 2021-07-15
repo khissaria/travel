@@ -21,6 +21,16 @@ export const createLocation = (location) => async (dispatch) => {
     }
 }
 
+export const getAllDiscussions = () => async (dispatch) => {
+
+    try {
+        const { data } = await api.getAllDiscussions();
+        dispatch({ type: 'GET_ALL_DISCUSSION', payload: data });
+    }
+    catch (err) {
+        console.log(err.message);
+    }
+}
 
 
 export const getDiscussion = (locationId) => async (dispatch) => {
@@ -71,7 +81,7 @@ export const editDiscussion = (id, updateDiscussion) => async (dispatch) => {
     try {
 
         const { data } = await api.editDiscussion(id, updateDiscussion);
-        debugger;
+        
         console.log(data);
         dispatch({ type: 'EDIT_DISCUSSION', payload: data })
     }
